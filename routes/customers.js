@@ -20,7 +20,7 @@ router.get('/:id', async (req, res) => {
     if (!customer) {
       return res.status(404).json({ error: 'Customer not found' });
     }
-    res.json({ customer, transfers: customer.transfers });
+    res.json(customer); // Respond with only the customer object
   } catch (error) {
     res.status(500).json({ error: 'Internal server error' });
   }
