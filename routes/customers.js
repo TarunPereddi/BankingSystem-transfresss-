@@ -51,7 +51,7 @@ router.post('/transfer', async (req, res) => {
       senderName: sender.name, // Include the sender name
       receiverName: receiver.name, // Include the receiver name
       amount,
-      timestamp: Date.now()
+      timestamp: new Date()
     });
 
     await sender.save();
