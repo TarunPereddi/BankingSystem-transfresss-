@@ -1,5 +1,5 @@
+// models/transfer.js
 const mongoose = require('mongoose');
-
 const transferSchema = new mongoose.Schema({
   sender: {
     type: mongoose.Schema.Types.ObjectId,
@@ -11,6 +11,14 @@ const transferSchema = new mongoose.Schema({
     ref: 'Customer',
     required: true,
   },
+  senderName: {
+    type: String,
+    required: true,
+  },
+  receiverName: {
+    type: String,
+    required: true,
+  },
   amount: {
     type: Number,
     required: true,
@@ -20,7 +28,5 @@ const transferSchema = new mongoose.Schema({
     default: Date.now,
   },
 });
-
 const Transfer = mongoose.model('Transfer', transferSchema);
-
 module.exports = Transfer;
