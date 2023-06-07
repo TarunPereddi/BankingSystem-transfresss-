@@ -48,6 +48,8 @@ router.post('/transfer', async (req, res) => {
     const transfer = new Transfer({
       sender: senderId,
       receiver: receiverId,
+      senderName: sender.name, // Include the sender name
+      receiverName: receiver.name, // Include the receiver name
       amount,
     });
 
